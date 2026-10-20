@@ -58,7 +58,7 @@ resource "aws_autoscaling_group" "asg_green" {
     aws_lb_target_group.tg_green.arn
   ]
   launch_template {
-    id      = aws_launch_template.alt_blue.id
+    id      = aws_launch_template.alt_green.id
     version = "$Latest"
   }
 }
