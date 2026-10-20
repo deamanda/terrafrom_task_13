@@ -39,7 +39,7 @@ resource "aws_autoscaling_group" "asg_blue" {
   max_size            = 2
   min_size            = 1
   desired_capacity    = 2
-  vpc_zone_identifier = data.aws_subnets.subnets.ids
+  vpc_zone_identifier = data.aws_subnets.subnets_public.ids
   target_group_arns = [
     aws_lb_target_group.tg_blue.arn
   ]
@@ -59,7 +59,7 @@ resource "aws_autoscaling_group" "asg_green" {
   max_size            = 2
   min_size            = 1
   desired_capacity    = 2
-  vpc_zone_identifier = data.aws_subnets.subnets.ids
+  vpc_zone_identifier = data.aws_subnets.subnets_public.ids
   target_group_arns = [
     aws_lb_target_group.tg_green.arn
   ]
