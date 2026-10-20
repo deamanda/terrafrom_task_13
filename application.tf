@@ -43,12 +43,6 @@ resource "aws_autoscaling_group" "asg_blue" {
   target_group_arns = [
     aws_lb_target_group.tg_blue.arn
   ]
-  lifecycle {
-    ignore_changes = [
-      load_balancers,
-      target_group_arns
-    ]
-  }
   launch_template {
     id      = aws_launch_template.alt_blue.id
     version = "$Latest"
@@ -63,12 +57,6 @@ resource "aws_autoscaling_group" "asg_green" {
   target_group_arns = [
     aws_lb_target_group.tg_green.arn
   ]
-  lifecycle {
-    ignore_changes = [
-      load_balancers,
-      target_group_arns
-    ]
-  }
   launch_template {
     id      = aws_launch_template.alt_blue.id
     version = "$Latest"
